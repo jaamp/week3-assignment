@@ -7,7 +7,6 @@ class PropertyCard extends React.Component {
     if (this.props.items.host.isSuperhost) {
       superString = "Superhost"
     }
-
     return(
       <div className="card">
         <img className="card-img" src={this.props.items.image} alt="view of the property" />
@@ -22,7 +21,7 @@ class PropertyCard extends React.Component {
           <p className="card-superhost">{superString}</p>
           <p className="card-title">{this.props.items.rating.stars}</p>
           <p className="card-title">{this.props.items.rating.reviews}</p>
-          <button>Rent Me</button>
+          <button onClick={() => this.props.addRental(this.props.items.title)}>Rent Me</button>
         </div>
       </div>
     )
